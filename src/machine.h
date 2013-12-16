@@ -1,12 +1,3 @@
-/*******************************************************************************
- * MAC0325 - Otimização Combinatória
- *
- * Projeto: Escalonamento de Tarefas
- * Aluno: Daniel Augusto Cortez (dacortez79@gmail.com)
- *
- * Data: 29/11/2013
- ******************************************************************************/
-
 #ifndef MACHINE_H
 #define MACHINE_H
 

@@ -1,12 +1,3 @@
-/*******************************************************************************
- * MAC0325 - Otimização Combinatória
- *
- * Projeto: Escalonamento de Tarefas
- * Aluno: Daniel Augusto Cortez (dacortez79@gmail.com)
- *
- * Data: 29/11/2013
- ******************************************************************************/
-
 #include <iostream>
 #include "scheduler.h"
 
@@ -19,13 +10,11 @@ Scheduler::Scheduler(vector<Machine> machines, vector<Job> jobs)
 	max = 0;
 }
 
-// Retorna a maior ocupação entre as máquinas (o makespan).
 int Scheduler::getMaxOccupation(void) const
 {
 	return max;
 }
 
-// Retorna a ocupação da máquina de id machineId.
 int Scheduler::getMachineOccupation(const int machineId) const
 {
 	for (int i = 0; i < machines.size(); i++)
@@ -34,7 +23,6 @@ int Scheduler::getMachineOccupation(const int machineId) const
 	return -1;
 }
 		
-// Retorna o id da máquina que a tarefa de id jobId está escalonada.
 int Scheduler::getMachineId(const int jobId) const
 {
 	for (int i = 0; i < jobs.size(); i++)
@@ -43,7 +31,6 @@ int Scheduler::getMachineId(const int jobId) const
 	return -1;
 }
 
-// Imprime o escolanamento das máquinas e a ocupação de cada máquina.
 void Scheduler::printSchedule(void) const
 {
 	printMachines();
@@ -52,7 +39,6 @@ void Scheduler::printSchedule(void) const
 	cout << "---------------------------------------------------" << endl;
 }
 
-// Imprime cada máquina com a lista de tarefas processadas.
 void Scheduler::printMachines(void) const
 {
 	for (int i = 0; i < machines.size(); i++) {
@@ -65,7 +51,6 @@ void Scheduler::printMachines(void) const
 	}
 }
 
-// Imprime cada tarefa com a máquina de processamento associada.
 void Scheduler::printJobs(void) const
 {
 	for (int i = 0; i < jobs.size(); i++) {
@@ -74,7 +59,6 @@ void Scheduler::printJobs(void) const
 	}
 }
 
-// Para cada máquina imprime a sua ocupação.
 void Scheduler::printOccupations(void) const
 {
 	char buf[16];

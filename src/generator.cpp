@@ -1,12 +1,3 @@
-/*******************************************************************************
- * MAC0325 - Otimização Combinatória
- *
- * Projeto: Escalonamento de Tarefas
- * Aluno: Daniel Augusto Cortez (dacortez79@gmail.com)
- *
- * Data: 29/11/2013
- ******************************************************************************/
-
 #include <cstdlib>
 #include <iostream>
 #include <time.h>
@@ -19,9 +10,6 @@ Generator::Generator(int totalMachines, int totalJobs)
 	srand (time(NULL));
 }
 
-// Gera a lista de máquinas e tarefas.
-// As tarefas são geradas com durações inteiras uniformemente distribuídas
-// no intervalo fechado [min, max].
 void Generator::generate(int min, int max)
 {
 	generateMachines();

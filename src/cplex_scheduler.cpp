@@ -1,12 +1,3 @@
-/*******************************************************************************
- * MAC0325 - Otimização Combinatória
- *
- * Projeto: Escalonamento de Tarefas
- * Aluno: Daniel Augusto Cortez (dacortez79@gmail.com)
- *
- * Data: 29/11/2013
- ******************************************************************************/
-
 #include <cmath>
 #include <iostream>
 #include <string>
@@ -21,8 +12,6 @@ CplexScheduler::CplexScheduler(vector<Machine> machines, vector<Job> jobs)
 	n = jobs.size();
 }
 
-// Resolve o problema do escalonamento utilizando o modelo de programção
-// linear construído no CPLEX. Retorna true no sucesso, false caso contrário.
 bool CplexScheduler::schedule(void)
 {
 	IloEnv env;
@@ -62,11 +51,11 @@ bool CplexScheduler::schedule(void)
 		IloCplex mycplex(model);
 		mycplex.setParam(IloCplex::EpGap, 0.0);
 		mycplex.setParam(IloCplex::TiLim, 180.0);
-		//mycplex.exportModel("sched.lp");
+		mycplex.exportModel("sched.lp");
 
 		if (mycplex.solve()) {
-			mycplex.out() << "Solution Status is " << mycplex.getStatus() << endl;
-			mycplex.out() << "The objective value is " << mycplex.getObjValue() << endl;		
+			cout << "Solution Status is " << mycplex.getStatus() << endl;
+			cout << "The objective value is " << mycplex.getObjValue() << endl;
 			for (int j = 0; j < m; j++) {
 				for (int i = 0; i < n; i++)
 					if ((int) (mycplex.getValue(x[i][j]) + 0.5))

@@ -1,12 +1,3 @@
-/*******************************************************************************
- * MAC0325 - Otimização Combinatória
- *
- * Projeto: Escalonamento de Tarefas
- * Aluno: Daniel Augusto Cortez (dacortez79@gmail.com)
- *
- * Data: 29/11/2013
- ******************************************************************************/
-
 #include <iostream>
 #include <vector>
 #include <stdio.h>
@@ -45,7 +36,6 @@ int main(int argc, char **argv)
 	return 0;
 }
 
-// Resolve o problema a partir do arquivo de entrada informado.
 void fileInput(char** argv) {
 	FILE *fp;
 	if (!(fp = fopen(argv[1], "r"))) {
@@ -78,7 +68,6 @@ void fileInput(char** argv) {
 	}
 }
 
-// Resolve o problema a partir de uma instância gerada aleatoriamente.
 void randomInput(char **argv) {
 	int totalMachines = atoi(argv[1]);
 	int totalJobs = atoi(argv[2]);
@@ -95,8 +84,6 @@ void randomInput(char **argv) {
 	}
 }
 
-// Resolve a instância pela heurística LPT e pelo CPLEX. 
-// Imprime a razão LPT/OPT.
 void makeSchedules(const vector<Machine>& machines, const vector<Job>& jobs) 
 {
 	printMachines(machines);
@@ -117,10 +104,9 @@ void makeSchedules(const vector<Machine>& machines, const vector<Job>& jobs)
 		maxc = scheduler->getMaxOccupation();
 	}
 
-	cout << "Razão (LPT/OPT) = " << (double) maxh / maxc << endl; 
+	cout << "Razão (LPT/OPT) = " << (double) maxh / maxc << endl;
 }
 
-// Imprime a lista de máquinas passada.
 void printMachines(vector<Machine> machines)
 {
 	cout << "Lista de máquinas criadas:" << endl;
@@ -132,7 +118,6 @@ void printMachine(Machine machine)
 	cout << "- Máquina " << machine.getId() << ": " << machine.getOccupation() << endl;
 }
 
-// Imprime a lista de tarefas passada.
 void printJobs(vector<Job> jobs)
 {
 	cout << "Lista de tarefas geradas:" << endl;

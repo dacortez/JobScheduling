@@ -1,12 +1,3 @@
-/*******************************************************************************
- * MAC0325 - Otimização Combinatória
- *
- * Projeto: Escalonamento de Tarefas
- * Aluno: Daniel Augusto Cortez (dacortez79@gmail.com)
- *
- * Data: 29/11/2013
- ******************************************************************************/
-
 #ifndef LPT_SCHEDULER_H
 #define LPT_SCHEDULER_H
 
@@ -22,10 +13,10 @@ class LptScheduler: public Scheduler
 	
 	private:
 		struct machineComparator {
-    	bool operator() (const Machine *m1, const Machine *m2) const;
+			bool operator() (const Machine *m1, const Machine *m2) const;
 		};
 		struct jobComparator {
-    	bool operator() (const Job j1, const Job j2) const;
+			bool operator() (const Job j1, const Job j2) const;
 		} JobComparator;
 		std::priority_queue<Machine*, std::vector<Machine*>, machineComparator> pq;
 };
