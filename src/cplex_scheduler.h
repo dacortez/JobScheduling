@@ -17,7 +17,7 @@ ILOSTLBEGIN
 class CplexScheduler: public Scheduler
 {
 	public:
-		CplexScheduler(vector<Machine> machines, vector<Job> jobs);
+		CplexScheduler(std::vector<Machine> machines, std::vector<Job> jobs);
 		bool schedule(void);
 		void printSchedule(void) const;
 

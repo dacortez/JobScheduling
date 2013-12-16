@@ -12,6 +12,8 @@
 #include <string>
 #include "cplex_scheduler.h"
 
+using namespace std;
+
 CplexScheduler::CplexScheduler(vector<Machine> machines, vector<Job> jobs) 
 	: Scheduler(machines, jobs)
 {

@@ -14,12 +14,10 @@
 #include "job.h"
 #include "machine.h"
 
-using namespace std;
-
 class Scheduler
 {
 	public:
-		Scheduler(vector<Machine> machines, vector<Job> jobs);
+		Scheduler(std::vector<Machine> machines, std::vector<Job> jobs);
 		virtual bool schedule(void) = 0;
 		int getMaxOccupation(void) const;
 		int getMachineOccupation(const int machineId) const;
@@ -27,8 +25,8 @@ class Scheduler
 		virtual void printSchedule(void) const;
 
 	protected:
-		vector<Machine> machines;
-		vector<Job> jobs;
+		std::vector<Machine> machines;
+		std::vector<Job> jobs;
 		int max;
 		void printMachines(void) const;
 		void printJobs(void) const;

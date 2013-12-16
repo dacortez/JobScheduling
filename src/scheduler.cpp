@@ -10,6 +10,8 @@
 #include <iostream>
 #include "scheduler.h"
 
+using namespace std;
+
 Scheduler::Scheduler(vector<Machine> machines, vector<Job> jobs) 
 {
 	this->machines = machines;

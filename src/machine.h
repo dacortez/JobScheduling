@@ -13,8 +13,6 @@
 #include <vector>
 #include "job.h" 
 
-using namespace std;
-
 class Machine
 {
 	public:
@@ -22,12 +20,12 @@ class Machine
 		int getId(void) const;
 		int getOccupation(void) const;
 		void assign(Job& job);
-		vector<Job> getJobs(void) const;
+		std::vector<Job> getJobs(void) const;
 
 	private:
 		int id;
 		int occupation;
-		vector<Job> jobs;
+		std::vector<Job> jobs;
 };
 
 #endif

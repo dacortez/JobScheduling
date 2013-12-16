@@ -13,6 +13,8 @@
 #include <vector>
 #include "lpt_scheduler.h"
 
+using namespace std;
+
 LptScheduler::LptScheduler(vector<Machine> machines, vector<Job> jobs) 
 	: Scheduler(machines, jobs)
 {

@@ -23,7 +23,7 @@ CCC = g++ -O0
 # Compiler options 
 # ---------------------------------------------------------------------
 
-CCOPT = -m64 -O -fPIC -fexceptions -DNDEBUG -DIL_STD
+CCOPT = -m64 -O -fPIC -fexceptions -DNDEBUG -DIL_STD -stdlib=libstdc++
 
 # ---------------------------------------------------------------------
 # Link options and libraries
@@ -32,7 +32,7 @@ CCOPT = -m64 -O -fPIC -fexceptions -DNDEBUG -DIL_STD
 CPLEXLIBDIR   = $(CPLEXDIR)/lib/$(SYSTEM)/$(LIBFORMAT)
 CONCERTLIBDIR = $(CONCERTDIR)/lib/$(SYSTEM)/$(LIBFORMAT)
 CCLNFLAGS = -L$(CPLEXLIBDIR) -lilocplex -lcplex -L$(CONCERTLIBDIR) -lconcert -m64 \
-	-lm -lpthread -framework CoreFoundation -framework IOKit -Wall -ansi -pedantic
+	-lm -lpthread -framework CoreFoundation -framework IOKit -stdlib=libstdc++ -Wall -ansi -pedantic
 CONCERTINCDIR = $(CONCERTDIR)/include
 CPLEXINCDIR   = $(CPLEXDIR)/include
 CCFLAGS = $(CCOPT) -I$(CPLEXINCDIR) -I$(CONCERTINCDIR) 

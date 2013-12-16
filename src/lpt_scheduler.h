@@ -16,7 +16,7 @@
 class LptScheduler: public Scheduler
 {
 	public:
-		LptScheduler(vector<Machine> machines, vector<Job> jobs);
+		LptScheduler(std::vector<Machine> machines, std::vector<Job> jobs);
 		bool schedule(void);
 		void printSchedule(void) const;
 	
@@ -27,7 +27,7 @@ class LptScheduler: public Scheduler
 		struct jobComparator {
     	bool operator() (const Job j1, const Job j2) const;
 		} JobComparator;
-		priority_queue<Machine*, vector<Machine*>, machineComparator> pq;
+		std::priority_queue<Machine*, std::vector<Machine*>, machineComparator> pq;
 };
 
 #endif

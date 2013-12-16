@@ -9,6 +9,8 @@
 
 #include "machine.h"
 
+using namespace std;
+
 Machine::Machine(const int id) 
 { 
 	this->id = id;
