@@ -1,0 +1,88 @@
+--------------------------------------------------------------------------------
+MAC0325 - Otimização Combinatória
+Projeto: Escalonamento de Tarefas
+Aluno: Daniel Augusto Cortez (dacortez79@gmail.com)
+Número USP: 2960291
+Data: 04/12/2013
+--------------------------------------------------------------------------------
+
+
+Compilação
+----------
+
+Utilize o Makefile no diretório raiz para compilar o projeto:
+	
+  $> make
+
+** ATENÇÃO ** 
+
+O Makefile foi preparado para compilação no MacOS rodando em um processador de 
+64 bits (SYSTEM = x86-64_darwin9_gcc4.0). O Makefile deve ser modificado de 
+forma a conter apontadores corretos para a localização das bibliotecas do CPLEX. 
+Modifique a seção 'IMPORTANTE' do Makefile (linhas 13 e 14).
+
+Caso a compilação seja realizada no sistema Linux, o Makefile deve ser alterado 
+de acordo com o modelo disponível na distribuição do CPLEX utilizada.
+
+O código compilado estará disponível no diretório bin/. 
+
+
+Código-Fonte
+------------
+
+O código-fonte do projeto (*.cpp *.h) encotra-se do diretório src/. O ponto de 
+entrada do programa (função main) encontra-se no arquivo src/main.cpp.
+
+
+Programa
+--------
+
+O programa compilado (bin/projeto325) pode ser utilizado da seguinte forma:
+
+	$> bin/projeto325 <arquivo_de_entrada>
+
+ou
+
+	$> bin/projeto325 <número_de_máquinas> <número_de_tarefas> <min> <max>
+
+onde
+
+	arquivo_de_entrada: um arquivo contendo a instância a ser resolvida (veja
+                      próxima seção)
+	número_de_máquinas: o número de máquinas da instância a ser criada
+	 número_de_tarefas: o número de tarefas da instância a ser criada
+	               min: duração mínima de uma tarefa
+                 max: duração máxima de uma tarefa
+
+Um exemplo de utilização pode ser feito através do arquivo de entrada 
+'pior_caso.in' fornecido no diretório raiz:
+
+	$> bin/projeto325 pior_caso.in
+
+A saída do processamento desse arquivo está disponível em 'pior_caso.out', como
+ilustração dos resultados.
+
+
+Arquivo de Entrada
+------------------
+
+O arquivo de entrada é um arquivo de texto contendo na primeira linha o número
+de máquinas m, na segunda linha o número de tarefas n, e nas demais n linhas
+a duração (inteira) de cada tarefa:
+
+m
+n
+d_1
+d_2
+...
+d_n
+
+Veja o arquivo 'pior_caso.in' para um exemplo.
+
+
+Relatório
+---------
+
+Um relatório detalhado sobre este projeto, contendo informações sobre o problema 
+estudado, os algoritmos implementados e os resultados obtidos, encontra-se 
+disponível em relatorio/relatorio.pdf.
