@@ -7,7 +7,7 @@ Generator::Generator(int totalMachines, int totalJobs)
 { 
 	this->totalMachines = totalMachines;
 	this->totalJobs = totalJobs;
-	srand (time(NULL));
+	srand (time(0));
 }
 
 void Generator::generate(int min, int max)

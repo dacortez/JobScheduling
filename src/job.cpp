@@ -1,5 +1,4 @@
 #include <cstdlib>
-#include <stddef.h>
 
 #include "job.h"
 
@@ -7,7 +6,7 @@ Job::Job(const int id, const int length)
 { 
 	this->id = id;
 	this->length = length;
-	machine = NULL;
+	machine = 0;
 }
 
 int Job::getId(void) const
